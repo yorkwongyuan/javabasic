@@ -1,0 +1,49 @@
+@for $i from 1 through 3
+{
+    .item-#{$i}{
+        width:(20px * $i);
+    }
+}
+
+$boolean:true;
+
+@mixin hehe {
+    @if $boolean{
+        @debug "$boolean is #{$boolean}";
+        display:block;
+    } @else{
+        display:none;
+    }
+}
+
+.test{
+    @include hehe;
+}
+
+$lists:york nigel robin shirt;
+@each $list in $lists{
+    .photo-#{$list}{
+        width:10px;
+    }
+}
+
+$arr:jack rose hehe;
+@each $ar in $arr{
+    .hehe-#{$ar}{
+        width:1px;
+    }
+}
+
+$type:4;
+@while $type>1{
+    .while-#{$type}{
+         width:$type;
+    }
+    $type:$type - 1;
+}
+
+$width:2px;
+$height:1px;
+.heihei{
+    margin-top:#{$width/$height}px
+}
